@@ -67,62 +67,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        {/* Projects Section */}
-        <section className="bg-white rounded-lg shadow-md p-8 mb-8 hover:shadow-lg transition-shadow duration-200">
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">Projects</h2>
-          
-          <div className="space-y-6">
-            {/* Project 1 */}
-            <div className="border-2 border-slate-200 rounded-lg p-6 hover:border-blue-400 transition-colors duration-200">
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">Cryptographic Protocol Implementations</h3>
-              <p className="text-slate-700 mb-3 leading-relaxed">
-                Implementation suite of fundamental cryptographic protocols including Shamir's Secret Sharing, 
-                ElGamal encryption variants, and secure multiparty computation using MPyC.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Python</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Cryptography</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">MPC</span>
-              </div>
-              <a href="#" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium">
-                <ExternalLink size={16} />
-                <span>View on GitHub</span>
-              </a>
-            </div>
-
-            {/* Project 2 - Add your own */}
-            <div className="border-2 border-slate-200 rounded-lg p-6 hover:border-blue-400 transition-colors duration-200">
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">[Your Project Name]</h3>
-              <p className="text-slate-700 mb-3 leading-relaxed">
-                Brief description of what the project does and why it's interesting.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Technology</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Stack</span>
-              </div>
-              <a href="#" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium">
-                <ExternalLink size={16} />
-                <span>View on GitHub</span>
-              </a>
-            </div>
-
-            {/* Project 3 - Add your own */}
-            <div className="border-2 border-slate-200 rounded-lg p-6 hover:border-blue-400 transition-colors duration-200">
-              <h3 className="text-lg font-semibold text-slate-900 mb-2">[Another Project]</h3>
-              <p className="text-slate-700 mb-3 leading-relaxed">
-                Brief description of what the project does and why it's interesting.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Technology</span>
-                <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Stack</span>
-              </div>
-              <a href="#" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium">
-                <ExternalLink size={16} />
-                <span>View on GitHub</span>
-              </a>
-            </div>
-          </div>
-        </section>
+        
 
         {/* Skills Section */}
         <section className="bg-white rounded-lg shadow-md p-8 mb-8 hover:shadow-lg transition-shadow duration-200">
