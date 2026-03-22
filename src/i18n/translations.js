@@ -1,0 +1,216 @@
+export const translations = {
+  en: {
+    // Navbar
+    nav: {
+      home: 'Home',
+      about: 'About',
+      skills: 'Skills',
+      projects: 'Projects',
+      contact: 'Contact',
+      resume: 'Resume',
+    },
+    // Hero
+    hero: {
+      greeting: "Hi, I'm",
+      name: 'Yanis',
+      title: "CS Master's Student | Cyber Security Enthusiast",
+      description: 'Specializing in cryptography and security,focusing on zero-knowledge proofs, and building secure systems. Passionate about privacy-preserving, secure systems and a decentralized internet.',
+      viewWork: 'View My Work',
+      getInTouch: 'Get In Touch',
+    },
+    // About
+    about: {
+      title: 'About',
+      titleHighlight: 'Me',
+      intro: "I'm a Master's student in Computer Science at the University of Bern, specializing in cryptography, security and privacy.",
+      thesis: 'My Bachelors Thesis focused on implementing a Privacy Preserving Authentication system. This was achieved through the U2SSO system, which I implemented into the OpenID Connect Standard.',
+      teachingAssistant: 'Alongside my studies, I work as a Teaching Assistant for Discrete Mathematics and Algorithms, Probability and Information at the University of Bern, helping to teach bachelor students.',
+      freetime: 'When I am not infront of my computer I am passionate about sports, I play Rugby, explore mountains either on foot or on a Snowboard/Skis to find the perfect view without any internet connection.',
+      education: 'Education',
+      educationMsc: 'MSc Computer Science, University of Bern',
+      educationMscSpec: 'Security Track',
+      educationMscDate: '2025 - present',
+      educationBsc: 'BSc Computer Science, University of Bern',
+      educationBscDate: '2022 - 2025',
+      teaching: 'Teaching',
+      teachingRole: 'Teaching Assistant',
+      teachingCourse1: 'Discrete Math',
+      teachingCourse2: 'Algorithms, Probability and Information',
+      research: 'Research',
+      researchFocus: 'Focus Areas',
+      researchArea1: 'Privacy-Preserving Systems',
+      researchArea2: 'Cryptographic Protocols',
+      researchArea3: 'Zero-Knowledge Proofs',
+    },
+    // Philosophy
+    philosophy: {
+      label: 'Philosophy',
+      title: 'Why I Build',
+      p1: "I believe the internet should be built around user sovereignty and privacy by design. My work on zero-knowledge proofs and privacy-preserving authentication is a direct expression of this belief.",
+      quote: 'Privacy is not a luxury; it is the foundation of my dignity as a human, and without it, I\'m merely a product to be sold.',
+      p2: "There should be no tradeoff between convenience and privacy. This false dichotomy, so deeply embedded in today's digital landscape, is a design choice, not a technical necessity. Both can, and should, be achieved simultaneously.",
+      p3: "Achieving this requires a decentralized internet. Like any governing body, when power concentrates too heavily in one place, the conditions for abuse are created. The democratic values we expect in civic life don't disappear at the browser window, they must be actively built into the systems we use every day.",
+      p4: "It is my goal to build technology centered around the user, not the platform. Systems where individuals own their identity, control their data, and interact with the digital world on their own terms, not as a product to be monetized, but as a person to be respected.",
+    },
+    // Skills
+    skills: {
+      title: 'Skills',
+      titleHighlight: '& Technologies',
+      languages: 'Languages',
+      security: 'Security',
+      frameworks: 'Frameworks',
+      tools: 'Tools',
+      securityProse: "Focused on privacy-preserving authentication, zero-knowledge proofs, and secure protocol design. This includes a Bachelor's thesis implementing U2SSO within OpenID Connect using ZKPs for anonymous and unlinkable authentication.",
+    },
+    // Projects
+    projects: {
+      title: 'Featured',
+      titleHighlight: 'Projects',
+      thesisTitle: 'ZKP-based Authentication',
+      thesisDesc: 'Master thesis project implementing zero-knowledge proof authentication systems for privacy-preserving identity verification. Explores novel approaches to secure authentication without revealing sensitive user data.',
+      thesisStatus: 'Thesis Project',
+    
+      mrTitle: 'Mixed Reality Teleoperation System',
+      mrDesc: 'Current semester project developing a mixed reality system for remote robot teleoperation. Combines VR interfaces with real-time control systems for intuitive robot manipulation.',
+      mrStatus: 'In Progress',
+
+      futureSelfTitle: 'FutureSelf App',
+      futureSelfDesc: 'Semester project, developing a cross-platform mobile app. Launched on both PlayStore and AppStore. Project where we worked as a team of 5 Students, where each student performed a different task, for me this was the migration to iOS and launching on the AppStore.',
+      futureSelfStatus: 'finished School project'
+    },
+    // Writing
+    writing: {
+      label: 'Blogposts',
+      title: 'Writing',
+      subtitle: 'Things that intrigue me. From tech to politics',
+      read: 'Read',
+      allPosts: 'All Posts',
+    },
+    // Contact
+    contact: {
+      title: 'Get In',
+      titleHighlight: 'Touch',
+      subtitle: "I'm always interested in discussing new opportunities, research collaborations, or just chatting about security and cryptography.",
+      info: 'Contact Information',
+      email: 'Email',
+      sendMessage: 'Send a Message',
+      name: 'Name',
+      namePlaceholder: 'Your name',
+      emailPlaceholder: 'your.email@example.com',
+      message: 'Message',
+      messagePlaceholder: 'Your message...',
+      send: 'Send Message',
+      sending: 'Sending...',
+      success: 'Message sent successfully!',
+      error: 'Failed to send. Please try again.',
+      copyright: '© {year} Yanis Berger. All rights reserved.',
+    },
+  },
+  ch: {
+    // Navbar
+    nav: {
+      home: 'Home',
+      about: 'Über mi',
+      skills: 'Skills',
+      projects: 'Projekt',
+      contact: 'Kontakt',
+      resume: 'Läbeslouf',
+    },
+    // Hero
+    hero: {
+      greeting: 'Heyo i bi dr',
+      name: 'Yanis',
+      title: 'CS Master-Student | Cyber Security Enthusiast',
+      description: 'Spezialisierig uf kryptografie und sicherheit, mitemne fokus uf zero-knowledge proofs und ds Boue vo sichere System. Mitere liideschaft für privatsphäre erhaltendi, siicheri system und es dezentralisierts internet',
+      viewWork: 'Lueg mini Projekt ah',
+      getInTouch: 'schrib mir',
+    },
+    // About
+    about: {
+      title: 'Über',
+      titleHighlight: 'mi',
+      intro: 'I bi e Master Student in Informatik ar Uni Bärn. Ig spezialisiere mi uf Kryptographie, Sicherheit und privatsphäre.',
+      thesis: 'Mini Bachelor-Arbet het sich uf d Implementierig vomene Privatsphäre erhaltends authentifizierigs System konzentriert. Das isch dür ds U2SSO-System erreicht worde, wo ich i de OpenID Connect Standard implementiert ha.',
+      teachingAssistant: 'Näbem studium schaffeni no aus hiufsassistent fürd Fächer Diskreti mathematik und Algorithme, Wahrschiinlechkeit und Information ar Uni Bern, woni hiufe bachelor studis zUnterrichte. ',
+      freetime: 'Weni nid gd vorem compi bi brönneni füre sport. I spile rugby und entdecke gärn dBärge, egau öb zfuess oder ufemne brätt oder skii, um die schönsti ussicht ohni internet verbindig zfinde.',
+      education: 'Usbiudig',
+      educationMsc: 'MSc Informatik, Uni Bärn',
+      educationMscSpec: 'Security Track',
+      educationMscDate: '2025 – itz',
+      educationBsc: 'BSc Informatik, Uni Bärn',
+      educationBscDate: '2022 – 2025',
+      teaching: 'Ungerricht',
+      teachingRole: 'Hiufsassistänt',
+      teachingCourse1: 'Diskreti Mathematik',
+      teachingCourse2: 'Algorithme, Wahrschinlichkeit und Information',
+      research: 'Forschig',
+      researchFocus: 'Schwärpünkt',
+      researchArea1: 'Privacy-Preserving Systems',
+      researchArea2: 'Kryptografischi Protokoll',
+      researchArea3: 'Zero-Knowledge Proofs ',
+    },
+    // Philosophy
+    philosophy: {
+      label: 'Philosophie',
+      title: 'Wasmi zum entwickle bewegt',
+      p1: 'I gloube fescht dra das ds Internet sött um dUser-Souveränität und Privacy drumum bout sy. Mini Arbeit um Zero-Knowledge-Proofs und Privatsphäre-Erhaltendi Authentifizierig isch e diräktä Usdruck vo dere Überzügig.',
+      quote: 'Privacy is not a luxury; it is the foundation of my dignity as a human, and without it, I\'m merely a product to be sold.',
+      p2: 'Es sött ke Kompromiss zwüsche Komfort und Privacy gä. Die fauschi Dichotomie, wo so töif ir hütige digitale Landschaft verankeret isch, isch e Design-Entscheidig und nid e technischi Notwendigkeit. Beides cha und sötti gliichzytig erreicht wärde.',
+      p3: 'Um das z erreiche, bruuchts es dezentralisiertes Internet. Wie bi jedere Regierig, wenn d Macht z starch a eim Ort konzentriert isch, wärde d Bedingige für Missbruch gschafft. Die demokratische Wärt, wo mir im zivile Läbe erwarte, verschwinde nid am Browser-Fänschter sondern müesse aktiv id Systäm ibout wärde, wo mir jede Tag bruuche.',
+      p4: 'Es isch mis Ziu, Technologie zentwickle, wo umd User zentriert isch, nid um dPlattform. System, wo de Individue ihri Identität bsitze, ihri Date kontrolliere und mit dr digitale Wäut uf ihrne eigene Bedingige interagiere, nid als Produkt zum monetarisiere, sondern als Person zum respektiere.',
+    },
+    // Skills
+    skills: {
+      title: 'Skills',
+      titleHighlight: '& Technologie',
+      languages: 'Sprache',
+      security: 'Sicherheit',
+      frameworks: 'Frameworks',
+      tools: 'Tools',
+      securityProse: "Fokussiert uf Privatsphäre erhaltendi Authentifizierig, Zero-Knowledge Proofs und sichers Protokoll-Design. Ds beinhalted oh mini Bachelor-Thesis wo U2SSO innerhalb vo OpenID Connect mit ZKPs implementiert het, um anonymi und nid verchnüpfbari Authentifizierig.",
+    },
+    // Projects
+    projects: {
+      title: 'Usgwäuti',
+      titleHighlight: 'Projekt',
+      thesisTitle: 'ZKP-basierti Authentifizierig',
+      thesisDesc: 'Master-Thesis-Projekt wo Zero-Knowledge-Proof-Authentifizierigssystem implementiert für Privatsphäre erhaltendi Identitätsverifizierig. Erforscht neuartigi Aasätz für sicheri Authentifizierig ohni sensibli Benutzerdatä priiszgä.',
+      thesisStatus: 'Thesis-Projekt',
+
+      mrTitle: 'Mixed Reality Teleoperation System',
+      mrDesc: 'Aktuells Semesterprojekt wo es Mixed-Reality-System für d Fernstüürig vo Roboter entwicklet. Kombiniert VR-Schnittstelle mit Echtzyt-Stüürigssystem für intuitivi Robotermanipulation.',
+      mrStatus: 'Gd dranne',
+
+      futureSelfTitle: 'FutureSelf App',
+      futureSelfDesc: 'SemesterProjekt womer ire Gruppe hei... TODO:',
+      futureSelfStatus: 'finished School project'
+    },
+    // Writing
+    writing: {
+      label: 'Blog',
+      title: 'Gschribnigs',
+      subtitle: 'Was mi intressiert. Vo tech bis politischem. Blogposts si nur uf änglisch vrfüegbar. ',
+      read: 'Läse',
+      allPosts: 'Aui Artikel',
+    },
+    // Contact
+    contact: {
+      title: 'Nimm',
+      titleHighlight: 'Kontakt uf',
+      subtitle: 'I bi immer interessiert a neue Möglichkeite, Forschigszämearbeit oder eifach über Sicherheit und Kryptografie z diskutiere.',
+      info: 'Kontaktinformation',
+      email: 'E-Mail',
+      sendMessage: 'Nachricht schicke',
+      name: 'Name',
+      namePlaceholder: 'Di Name',
+      emailPlaceholder: 'dis.email@bispiu.com',
+      message: 'Nachricht',
+      messagePlaceholder: 'Dini Nachricht...',
+      send: 'Nachricht schicke',
+      sending: 'Am schicke...',
+      success: 'Nachricht erfougrich gschickt!',
+      error: 'Fähler bim Schicke. Bitte probiers nomau.',
+      copyright: '© {year} Yanis Berger. Aui Rächt vorbehalte.',
+    },
+  },
+}
