@@ -71,6 +71,14 @@ const mdComponents = {
       {children}
     </blockquote>
   ),
+  img: ({ src, alt }) => (
+    <img
+      src={src}
+      alt={alt}
+      className="rounded-xl my-8 w-full"
+      style={{ maxWidth: '100%' }}
+    />
+  ),
   code: ({ inline, children }) =>
     inline ? (
       <code
