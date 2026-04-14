@@ -21,13 +21,64 @@ Please change the parent <Route path="${H}"> to <Route path="${H==="/"?"*":`${H}
           }
         }
       `}),w.jsx("div",{className:"absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px",style:{background:"linear-gradient(90deg, transparent, var(--accent), transparent)"}})]})}function N2(){const{t:n}=wl(),a=[{titleKey:"projects.thesisTitle",descKey:"projects.thesisDesc",statusKey:"projects.thesisStatus",tags:["Privacy-Preserving Authentication","Zero-Knowledge Proofs","Go"],icon:c2,link:"https://crypto.unibe.ch/archive/theses/2025.bsc.yanis.berger.pdf"},{titleKey:"projects.mrTitle",descKey:"projects.mrDesc",statusKey:"projects.mrStatus",tags:["Mixed Reality","Robotics","Python"],icon:a2,link:"https://github.com/DevOpsMRTeleoperation2026/DevOpsProject"},{titleKey:"projects.futureSelfTitle",descKey:"projects.futureSelfDesc",statusKey:"projects.futureSelfStatus",tags:["iOS","flask","Software Engineering Project","Group Project"],icon:v2,link:"https://apps.apple.com/ch/app/future-self/id6479296395?l=en-GBFuture Self"}];return w.jsxs("section",{id:"projects",className:"py-24 px-6 sm:px-8 lg:px-12 relative overflow-hidden",style:{backgroundColor:"var(--bg-primary)"},children:[w.jsxs("div",{className:"max-w-6xl mx-auto",children:[w.jsxs("div",{className:"mb-16",children:[w.jsx("p",{className:"text-sm tracking-[0.3em] uppercase mb-3",style:{color:"var(--accent)"},children:n("projects.title")}),w.jsx("h2",{className:"font-display font-bold text-4xl sm:text-5xl lg:text-6xl",style:{color:"var(--text-primary)"},children:n("projects.titleHighlight")})]}),w.jsx("div",{className:"grid md:grid-cols-2 gap-8",children:a.map(i=>{const u=i.link?"a":"div",o=i.link?{href:i.link,target:"_blank",rel:"noopener noreferrer"}:{};return w.jsxs(u,{...o,className:`group relative p-8 rounded-xl border transition-all duration-300 block ${i.link?"cursor-pointer":""}`,style:{backgroundColor:"var(--bg-secondary)",borderColor:"rgba(107, 101, 96, 0.2)"},onMouseEnter:c=>{c.currentTarget.style.borderColor="var(--accent)",c.currentTarget.style.transform="translateY(-4px)"},onMouseLeave:c=>{c.currentTarget.style.borderColor="rgba(107, 101, 96, 0.2)",c.currentTarget.style.transform="translateY(0)"},children:[w.jsxs("div",{className:"flex items-start justify-between mb-6",children:[w.jsx("div",{className:"p-3 rounded-xl",style:{backgroundColor:"var(--accent-dim)"},children:w.jsx(i.icon,{size:26,style:{color:"var(--accent)"}})}),w.jsxs("div",{className:"flex items-center gap-2",children:[w.jsx("span",{className:"text-xs px-3 py-1.5 rounded-full font-medium",style:{backgroundColor:"var(--accent-dim)",color:"var(--accent)"},children:n(i.statusKey)}),i.link&&w.jsx(ZS,{size:18,className:"transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5",style:{color:"var(--text-muted)"}})]})]}),w.jsx("h3",{className:"font-display font-semibold text-2xl mb-4 transition-colors duration-300",style:{color:"var(--text-primary)"},children:n(i.titleKey)}),w.jsx("p",{className:"mb-6 leading-relaxed",style:{color:"var(--text-secondary)"},children:n(i.descKey)}),w.jsx("div",{className:"flex flex-wrap gap-2",children:i.tags.map(c=>w.jsx("span",{className:"px-3 py-1.5 text-sm rounded-full",style:{backgroundColor:"rgba(107, 101, 96, 0.15)",color:"var(--text-muted)"},children:c},c))}),w.jsx("div",{className:"absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none",style:{background:"linear-gradient(135deg, var(--accent-dim), transparent 50%)"}})]},i.titleKey)})})]}),w.jsx("div",{className:"absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px",style:{background:"linear-gradient(90deg, transparent, var(--accent), transparent)"}})]})}const D2=`---
-title: "Browser Fingerprints"
-description: "Coming soon"
-date: "??? 2026"
+title: "Kickstart on the Teleoperation Project"
+description: "Mixed reality teleoperation system for two SO-101 robotic arms using Meta Quest 3, integrated with the LeRobot framework for imitation learning."
+date: "April 2026"
 readTime: "??? min read"
 ---
 
-This is still a work in Progress, tune in soon!`,_2=`---
+## Getting Started
+
+On April 7th, 2026, our group started with the first hands-on task of our semester project
+for the course DevOps for Cyber-Physical Systems at the University of Bern. The goal for today
+was to build our two 3D-printed SO-101 robotic follower arms.
+
+As a first step we had to remove all the support structures from the prints. This turned out
+to be more work than expected as each part had a fair amount of support material wedged into
+tight corners and joints, and we quickly found that a small screwdriver was the most effective
+tool for getting underneath and popping it loose. With our refreshments and all the parts
+sorted out in front of us, we were ready to start assembling the first arm.
+
+![image](/src/posts/DevOpsProjectPictures/disorder.jpg)
+
+The assembly itself follows a joint-by-joint process, working up from the base. Each joint
+involves securing a motor into its housing using M2 and M3 screws, attaching the motor horns,
+and connecting the next arm segment. After a few minor setbacks, mostly around getting the
+motor horn angles right and keeping track of which screw size goes where, we had the first
+arm fully assembled by lunch.
+
+![image](/src/posts/DevOpsProjectPictures/working.jpg)
+
+After lunch we went back to the documentation to see how to proceed. The next step was
+configuring the motors, specifically, assigning each servo a unique ID so the controller
+board can address them individually on the bus. Out of the box, all Feetech STS3215 motors
+ship with a default ID of \`1\`, so you have to connect them to the board one at a time and
+run the \`lerobot-setup-motors\` script, which walks you through each joint in sequence and
+writes the correct ID and baudrate directly to the motor's non-volatile memory.
+
+This is where we hit our first larger issue. With only one machine running Linux among us,
+we couldn't work independently but instead had to do everything on one laptop. However this
+was fine, since we were in no rush and the setup itself took only a couple of minutes once
+everything had successfully installed. 
+
+![image](/src/posts/DevOpsProjectPictures/hookedUp.jpg)
+
+The slightly more tedious part was that we had to disconnect each motor from the arm,
+plug it individually into the controller board, assign its ID, and then reconnect it,
+which is noticeably fiddlier once the arm is already assembled. So we learned from our
+mistake: for the second arm, we ran the motor setup before assembly. To avoid any
+confusion about which servo belonged to which joint, we labeled each one accordingly
+first, and only then started putting the second arm together. This made the whole
+process noticeably smoother the second time around.
+
+By the end of the session we had both arms fully assembled, all motors configured with
+their correct IDs and baudrates, and the servos daisy-chained and connected back to
+their respective controller boards.
+
+![image](/src/posts/DevOpsProjectPictures/TwoFinishedArms.jpg)
+
+A solid first day. Next up is getting the LeRobot software stack running and starting
+on the calibration and teleoperation setup.`,_2=`---
 title: "Zero-Knowledge Proofs in Practice"
 description: "Why ZKPs matter, how they work, and why they are the foundation of privacy-preserving authentication."
 date: "March 2026"
