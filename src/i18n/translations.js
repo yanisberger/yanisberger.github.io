@@ -66,6 +66,15 @@ export const translations = {
     projects: {
       title: 'Featured',
       titleHighlight: 'Projects',
+      pqPoolTitle: 'Post-Quantum Shielded Pool',
+      pqPoolDesc: 'Hackathon project from the IC3 Blockchain Camp 2026: a prototype shielded pool for EVM chains that stays private against quantum adversaries. Users deposit into notes, then transfer or withdraw using zk proofs of note inclusion, hiding sender, recipient and amount. To start, I ran a spike to test whether the post-quantum ProveKit verifier could be deployed on Ethereum L1 and verify a proof. I then built the on-chain side: verifier wrapper contracts, the pool contract with a Poseidon2 Merkle tree, and scripts that run deposit, transfer and withdraw end to end on Sepolia.',
+      pqPoolStatus: 'Hackathon Project',
+      pqPoolSpikeLink: 'How I approached it: L1 verifier spike',
+
+      phishTitle: 'PhishOrPass',
+      phishDesc: 'A roguelike deckbuilder for phishing awareness training, built in SwiftUI for iPad and macOS. Every encounter is an email: play inspection cards to reveal threat indicators, then decide to trust, delete or report it. Missed clues cost HP, while correct calls earn artifacts that persist through the run.',
+      phishStatus: 'Course Project',
+
       thesisTitle: 'ZKP-based Authentication',
       thesisDesc: 'Bachelor thesis project implementing zero-knowledge proof authentication systems for privacy-preserving identity verification. Explores novel approaches to secure authentication without revealing sensitive user data.',
       thesisStatus: 'Thesis Project',
@@ -173,6 +182,15 @@ export const translations = {
     projects: {
       title: 'Usgwäuti',
       titleHighlight: 'Projekt',
+      pqPoolTitle: 'Post-Quantum Shielded Pool',
+      pqPoolDesc: 'Hackathon-Projekt vom IC3 Blockchain Camp 2026: e Prototyp vomene Shielded Pool für EVM-Chains, wo o gägä Quantecomputer privat blibt. Benutzer zahle i Notes ii und mache Transfers oder Uszahlige mit zk Proofs, wo Absender, Empfänger und Betrag verstecke. Zum Starte hani e Spike gmacht, um z teste ob dr post-quantum ProveKit-Verifier uf Ethereum L1 deployt und e Proof verifiziere wärde cha. Drnah hani d On-Chain-Siite baut: Verifier-Wrapper-Contracts, dr Pool-Contract mit emene Poseidon2-Merkle-Tree und Scripts, wo Deposit, Transfer und Withdraw end-to-end uf Sepolia usfüehre.',
+      pqPoolStatus: 'Hackathon-Projekt',
+      pqPoolSpikeLink: 'Mi Aasatz: L1-Verifier-Spike',
+
+      phishTitle: 'PhishOrPass',
+      phishDesc: 'E Roguelike-Deckbuilder für Phishing-Awareness-Training, baut i SwiftUI für iPad und macOS. Jedi Begegnig isch es Mail: mit Inspektionscharte deckt me Warnzeiche uf und entscheidet när, ob mes vertrout, löscht oder mäldet. Übersehni Hiiwis choste HP, richtigi Entscheide gä Artefakt, wo dr ganz Run lang bliibe.',
+      phishStatus: 'Kursprojekt',
+
       thesisTitle: 'ZKP-basierti Authentifizierig',
       thesisDesc: 'Bachelorthesis-Projekt wo Zero-Knowledge-Proof-Authentifizierigssystem implementiert für Privatsphäre erhaltendi Identitätsverifizierig. Erforscht neuartigi Aasätz für sicheri Authentifizierig ohni sensibli Benutzerdatä priiszgä.',
       thesisStatus: 'Thesis-Projekt',

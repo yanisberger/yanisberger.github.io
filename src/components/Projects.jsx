@@ -1,10 +1,29 @@
-import { Lock, Glasses, ArrowUpRight, TabletSmartphone } from 'lucide-react'
+import { Lock, Glasses, ArrowUpRight, TabletSmartphone, ShieldCheck, Fish } from 'lucide-react'
 import { useLanguage } from '../i18n/LanguageContext'
 
 export default function Projects() {
   const { t } = useLanguage()
 
   const projects = [
+    {
+      titleKey: 'projects.pqPoolTitle',
+      descKey: 'projects.pqPoolDesc',
+      statusKey: 'projects.pqPoolStatus',
+      tags: ['Post-Quantum Cryptography', 'Zero-Knowledge Proofs', 'Solidity', 'Noir'],
+      icon: ShieldCheck,
+      link: 'https://github.com/NicoSerranoP/pq-shielded-pool/tree/yanis-proof-foundryVerification',
+      extraLinks: [
+        { labelKey: 'projects.pqPoolSpikeLink', href: 'https://github.com/yanisberger/provekit-onchain' },
+      ],
+    },
+    {
+      titleKey: 'projects.phishTitle',
+      descKey: 'projects.phishDesc',
+      statusKey: 'projects.phishStatus',
+      tags: ['SwiftUI', 'Security Awareness', 'Game Design'],
+      icon: Fish,
+      link: 'https://github.com/yanisberger/PhishOrPass',
+    },
     {
       titleKey: 'projects.thesisTitle',
       descKey: 'projects.thesisDesc',
@@ -56,15 +75,9 @@ export default function Projects() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project) => {
-            const CardWrapper = project.link ? 'a' : 'div'
-            const cardProps = project.link
-              ? { href: project.link, target: '_blank', rel: 'noopener noreferrer' }
-              : {}
-
             return (
-              <CardWrapper
+              <div
                 key={project.titleKey}
-                {...cardProps}
                 className={`group relative p-8 rounded-xl border transition-all duration-300 block ${project.link ? 'cursor-pointer' : ''}`}
                 style={{
                   backgroundColor: 'var(--bg-secondary)',
@@ -79,6 +92,17 @@ export default function Projects() {
                   e.currentTarget.style.transform = 'translateY(0)'
                 }}
               >
+                {/* Card-wide link; stretched over the card so extra links can sit above it */}
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t(project.titleKey)}
+                    className="absolute inset-0 rounded-xl z-10"
+                  />
+                )}
+
                 {/* Header */}
                 <div className="flex items-start justify-between mb-6">
                   <div
@@ -139,6 +163,25 @@ export default function Projects() {
                   ))}
                 </div>
 
+                {/* Extra links */}
+                {project.extraLinks && (
+                  <div className="flex flex-wrap gap-4 mt-6">
+                    {project.extraLinks.map((extra) => (
+                      <a
+                        key={extra.href}
+                        href={extra.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="relative z-20 inline-flex items-center gap-1 text-sm font-medium hover:underline"
+                        style={{ color: 'var(--accent)' }}
+                      >
+                        {t(extra.labelKey)}
+                        <ArrowUpRight size={14} />
+                      </a>
+                    ))}
+                  </div>
+                )}
+
                 {/* Hover gradient overlay */}
                 <div
                   className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
@@ -146,7 +189,7 @@ export default function Projects() {
                     background: 'linear-gradient(135deg, var(--accent-dim), transparent 50%)',
                   }}
                 />
-              </CardWrapper>
+              </div>
             )
           })}
         </div>
