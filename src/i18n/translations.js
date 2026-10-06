@@ -67,12 +67,12 @@ export const translations = {
       title: 'Featured',
       titleHighlight: 'Projects',
       thesisTitle: 'ZKP-based Authentication',
-      thesisDesc: 'Master thesis project implementing zero-knowledge proof authentication systems for privacy-preserving identity verification. Explores novel approaches to secure authentication without revealing sensitive user data.',
+      thesisDesc: 'Bachelor thesis project implementing zero-knowledge proof authentication systems for privacy-preserving identity verification. Explores novel approaches to secure authentication without revealing sensitive user data.',
       thesisStatus: 'Thesis Project',
     
       mrTitle: 'Mixed Reality Teleoperation System',
-      mrDesc: 'Current semester project developing a mixed reality system for remote robot teleoperation. Combines VR interfaces with real-time control systems for intuitive robot manipulation.',
-      mrStatus: 'In Progress',
+      mrDesc: 'Semester project in which we developed a mixed reality system for remote robot teleoperation. Combines VR interfaces with real-time control systems for intuitive robot manipulation.',
+      mrStatus: 'Finished',
 
       futureSelfTitle: 'FutureSelf App',
       futureSelfDesc: 'Semester project, developing a cross-platform mobile app. Launched on both PlayStore and AppStore. Project where we worked as a team of 5 Students, where each student performed a different task, for me this was the migration to iOS and launching on the AppStore.',
@@ -174,12 +174,12 @@ export const translations = {
       title: 'Usgwäuti',
       titleHighlight: 'Projekt',
       thesisTitle: 'ZKP-basierti Authentifizierig',
-      thesisDesc: 'Master-Thesis-Projekt wo Zero-Knowledge-Proof-Authentifizierigssystem implementiert für Privatsphäre erhaltendi Identitätsverifizierig. Erforscht neuartigi Aasätz für sicheri Authentifizierig ohni sensibli Benutzerdatä priiszgä.',
+      thesisDesc: 'Bachelorthesis-Projekt wo Zero-Knowledge-Proof-Authentifizierigssystem implementiert für Privatsphäre erhaltendi Identitätsverifizierig. Erforscht neuartigi Aasätz für sicheri Authentifizierig ohni sensibli Benutzerdatä priiszgä.',
       thesisStatus: 'Thesis-Projekt',
 
       mrTitle: 'Mixed Reality Teleoperation System',
-      mrDesc: 'Aktuells Semesterprojekt wo es Mixed-Reality-System für d Fernstüürig vo Roboter entwicklet. Kombiniert VR-Schnittstelle mit Echtzyt-Stüürigssystem für intuitivi Robotermanipulation.',
-      mrStatus: 'Gd dranne',
+      mrDesc: 'Semesterprojekt womer es Mixed-Reality-System für d Fernstüürig vo Roboter entwicklet hei. Kombiniert VR-Schnittstelle mit Echtzyt-Stüürigssystem für intuitivi Robotermanipulation.',
+      mrStatus: 'Abgschlosse',
 
       futureSelfTitle: 'FutureSelf App',
       futureSelfDesc: 'SemesterProjekt womer ire Gruppe hei... TODO:',

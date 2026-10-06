@@ -19,7 +19,7 @@ export default function Projects() {
       statusKey: 'projects.mrStatus',
       tags: ['Mixed Reality', 'Robotics', 'Python'],
       icon: Glasses,
-      link: 'https://github.com/DevOpsMRTeleoperation2026/DevOpsProject',
+      link: 'https://github.com/prakash-aryan/xrtact/tree/camera-background-threads',
     },
     {
       titleKey: 'projects.futureSelfTitle',
