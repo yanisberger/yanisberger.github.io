@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useLanguage } from '../i18n/LanguageContext'
 import { courses, TOPICS, MILESTONES, semesterIndex, currentSemester } from '../data/courses'
 
@@ -117,6 +117,73 @@ function Timeline() {
   )
 }
 
+// One button that opens a small menu with the three views.
+function ViewPicker({ views, value, onChange, label }) {
+  const [open, setOpen] = useState(false)
+  const wrapRef = useRef(null)
+  const buttonRef = useRef(null)
+  const itemRefs = useRef([])
+  const current = views.find(([id]) => id === value)
+
+  useEffect(() => {
+    if (!open) return
+    const onDown = (e) => { if (!wrapRef.current?.contains(e.target)) setOpen(false) }
+    document.addEventListener('pointerdown', onDown)
+    itemRefs.current[views.findIndex(([id]) => id === value)]?.focus()
+    return () => document.removeEventListener('pointerdown', onDown)
+  }, [open, value, views])
+
+  const close = (focusButton = true) => { setOpen(false); if (focusButton) buttonRef.current?.focus() }
+  const choose = (id) => { onChange(id); close() }
+
+  const onMenuKey = (e) => {
+    const i = itemRefs.current.indexOf(document.activeElement)
+    if (e.key === 'ArrowDown') { e.preventDefault(); itemRefs.current[(i + 1) % views.length]?.focus() }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); itemRefs.current[(i - 1 + views.length) % views.length]?.focus() }
+    else if (e.key === 'Home') { e.preventDefault(); itemRefs.current[0]?.focus() }
+    else if (e.key === 'End') { e.preventDefault(); itemRefs.current[views.length - 1]?.focus() }
+    else if (e.key === 'Escape') { e.preventDefault(); close() }
+    else if (e.key === 'Tab') close(false)
+  }
+
+  return (
+    <div className="picker" ref={wrapRef}>
+      <button
+        ref={buttonRef}
+        type="button"
+        className="chip picker-button"
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-label={`${label}: ${current[1]}`}
+        onClick={() => setOpen((o) => !o)}
+        onKeyDown={(e) => { if (e.key === 'ArrowDown') { e.preventDefault(); setOpen(true) } }}
+      >
+        {current[1]}
+        <svg className="chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+          <path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+      {open && (
+        <div className="picker-menu" role="menu" aria-label={label} onKeyDown={onMenuKey}>
+          {views.map(([id, text], i) => (
+            <button
+              key={id}
+              ref={(el) => { itemRefs.current[i] = el }}
+              type="button"
+              role="menuitemradio"
+              aria-checked={id === value}
+              tabIndex={-1}
+              onClick={() => choose(id)}
+            >
+              {text}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function Courses() {
   const { t } = useLanguage()
   const [view, setView] = useState('focus') // focus | all | timeline
@@ -133,13 +200,7 @@ export default function Courses() {
       <div className="wrap">
         <div className="head">
           <h2 id="courses-h">{t('courses.title')}</h2>
-          <div className="filters" role="group" aria-label={t('courses.viewLabel')}>
-            {views.map(([id, label]) => (
-              <button key={id} type="button" className="chip" aria-pressed={view === id} onClick={() => setView(id)}>
-                {label}
-              </button>
-            ))}
-          </div>
+          <ViewPicker views={views} value={view} onChange={setView} label={t('courses.viewLabel')} />
         </div>
         <p className="sub">{t('courses.subtitle')}</p>
         {view === 'timeline' ? <Timeline /> : <GroupedList showAll={view === 'all'} />}

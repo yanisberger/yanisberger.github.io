@@ -190,8 +190,24 @@ dl.facts dd { margin: 0; }
 .md pre code { background: none; padding: 0; }
 
 /* courses: grouped list and timeline */
-.filters { display: flex; gap: 8px; flex-wrap: wrap; }
-.chip[aria-pressed="true"] { color: var(--fg); border-color: var(--muted); }
+.picker { position: relative; }
+.picker-button { color: var(--fg); gap: 10px; }
+.picker-button .chevron { transition: transform .15s ease; }
+.picker-button[aria-expanded="true"] { border-color: var(--muted); }
+.picker-button[aria-expanded="true"] .chevron { transform: rotate(180deg); }
+.picker-menu {
+  position: absolute; right: 0; top: calc(100% + 6px); z-index: 20; min-width: 100%;
+  display: grid; padding: 4px; background: var(--bg); border: 1px solid var(--line); border-radius: 6px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .28);
+}
+.picker-menu button {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 40px; padding: 0 10px;
+  font: 400 14px/1 var(--sans); color: var(--muted); background: none; border: 0; border-radius: 4px;
+  text-align: left; white-space: nowrap; cursor: pointer;
+}
+.picker-menu button:hover, .picker-menu button:focus-visible { color: var(--fg); background: color-mix(in srgb, var(--fg) 7%, transparent); outline: none; }
+.picker-menu button[aria-checked="true"] { color: var(--fg); font-weight: 500; }
+.picker-menu button[aria-checked="true"]::after { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--fg); }
 .sub { margin: 0 0 32px; color: var(--muted); max-width: 60ch; }
 .tag { font: 400 12.5px/1 var(--sans); color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 3px 6px; white-space: nowrap; }
 .groups { display: grid; gap: 40px; }
@@ -249,8 +265,6 @@ dl.facts dd { margin: 0; }
   dl.facts dd { margin-bottom: 12px; }
   .footer nav { gap: 32px; }
   .group { grid-template-columns: 1fr; gap: 12px; }
-  .head .filters { width: 100%; flex-wrap: nowrap; }
-  .head .filters .chip { flex: 1 1 auto; justify-content: center; padding: 0 10px; white-space: nowrap; }
   .group li { grid-template-columns: minmax(0, 1fr) auto; gap: 12px; }
   .group li .meta:nth-child(3) { display: none; }
   .footer nav a, .footer .mark, .row .more { display: inline-flex; align-items: center; min-height: 44px; }
@@ -258,7 +272,6 @@ dl.facts dd { margin: 0; }
 }
 
 @media (max-width: 370px) {
-  .head .filters { flex-wrap: wrap; }
   .menu-btn .chip { padding: 0 9px; }
 }
 
