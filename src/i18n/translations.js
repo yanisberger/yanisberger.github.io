@@ -15,7 +15,7 @@ export const translations = {
       skip: 'Skip to content',
     },
     hero: {
-      lead: 'I build privacy-preserving login systems with zero-knowledge proofs.',
+      lead: "I work on cryptography that protects people's privacy.",
       body: 'MSc Computer Science, Security track, at the University of Bern. My bachelor thesis put U2SSO anonymous login into OpenID Connect. This year I built a post-quantum shielded pool at the IC3 Blockchain Camp.',
       cta: 'See my work',
       resume: 'Download resume',
@@ -130,7 +130,7 @@ export const translations = {
       skip: 'Zum Inhaut',
     },
     hero: {
-      lead: 'I boue Login-System mit Zero-Knowledge Proofs, wo d Privatsphäre schütze.',
+      lead: 'I schaffe a Kryptografie, wo d Privatsphäre vo de Lüt schützt.',
       body: 'MSc Informatik, Security Track, ar Uni Bärn. Mini Bachelor-Arbet het ds anonyme U2SSO-Login i OpenID Connect iibout. Das Jahr hani am IC3 Blockchain Camp e post-quantum Shielded Pool bout.',
       cta: 'Lueg mini Projekt ah',
       resume: 'Läbeslouf abelade',
