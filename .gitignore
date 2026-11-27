@@ -27,3 +27,4 @@ playwright-report/
 playwright/.cache/
 screenshots/
 .taste-skill/
+dist
