@@ -2,7 +2,6 @@
 title: "Zero-Knowledge Proofs in Practice"
 description: "Why ZKPs matter, how they work, and why they are the foundation of privacy-preserving authentication."
 date: "March 2026"
-readTime: "3 min read"
 ---
 
 ## The problem with passwords

@@ -2,7 +2,6 @@
 title: "Kickstart on the Teleoperation Project"
 description: "Mixed reality teleoperation system for two SO-101 robotic arms using Meta Quest 3, integrated with the LeRobot framework for imitation learning."
 date: "April 2026"
-readTime: "??? min read"
 ---
 
 ## Getting Started

@@ -1,156 +1,67 @@
-import { Menu, Moon, Sun, X } from 'lucide-react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext'
 import { useTheme } from '../i18n/ThemeContext'
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+// `home` is true on the start page; on blog pages the section links point back to it.
+export default function Navbar({ home = true }) {
+  const [open, setOpen] = useState(false)
   const { language, toggleLanguage, t } = useLanguage()
   const { theme, toggleTheme } = useTheme()
+  const base = home ? '' : '/'
 
-  const isDark = theme === 'dark'
-  const navBg = isDark ? 'rgba(14, 12, 10, 0.88)' : 'rgba(245, 240, 232, 0.88)'
-  const dropdownBg = isDark ? 'rgba(14, 12, 10, 0.97)' : 'rgba(245, 240, 232, 0.97)'
-  const borderColor = isDark ? 'rgba(107, 101, 96, 0.3)' : 'rgba(107, 101, 96, 0.25)'
-
-  const navLinks = [
-    { href: '#home', key: 'nav.home' },
-    { href: '#about', key: 'nav.about' },
-    { href: '#skills', key: 'nav.skills' },
-    { href: '#projects', key: 'nav.projects' },
-    { href: '#contact', key: 'nav.contact' },
+  const links = [
+    { href: `${base}#work`, label: t('nav.work') },
+    home ? { href: '#writing', label: t('nav.writing') } : { href: '/blog', label: t('nav.writing'), route: true },
+    { href: `${base}#about`, label: t('nav.about') },
+    { href: `${base}#contact`, label: t('nav.contact') },
+    { href: '/resume.pdf', label: t('nav.resume'), external: true },
   ]
 
+  const renderLink = (l, onClick) =>
+    l.route ? (
+      <Link key={l.href} to={l.href} onClick={onClick}>{l.label}</Link>
+    ) : (
+      <a key={l.href} href={l.href} onClick={onClick} {...(l.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+        {l.label}
+      </a>
+    )
+
+  const toggles = (
+    <>
+      <button type="button" className="chip" onClick={toggleLanguage} aria-label={t('nav.language')}>
+        {language === 'en' ? <><b>EN</b>CH</> : <>EN<b>CH</b></>}
+      </button>
+      <button type="button" className="chip" onClick={toggleTheme}>
+        {theme === 'dark' ? t('nav.light') : t('nav.dark')}
+      </button>
+    </>
+  )
+
   return (
-    <nav className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
-      {/* Desktop pill navbar */}
-      <div
-        className="hidden md:flex items-center gap-6 px-6 py-2 rounded-full backdrop-blur-sm border"
-        style={{ backgroundColor: navBg, borderColor }}
-      >
-        {navLinks.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className="transition-colors duration-200 text-sm"
-            style={{ color: 'var(--text-secondary)' }}
-            onMouseEnter={(e) => e.target.style.color = 'var(--accent)'}
-            onMouseLeave={(e) => e.target.style.color = 'var(--text-secondary)'}
-          >
-            {t(link.key)}
-          </a>
-        ))}
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="transition-colors duration-200 text-sm"
-          style={{ color: 'var(--text-secondary)' }}
-          onMouseEnter={(e) => e.target.style.color = 'var(--accent)'}
-          onMouseLeave={(e) => e.target.style.color = 'var(--text-secondary)'}
-        >
-          {t('nav.resume')}
-        </a>
-
-        <div style={{ width: '1px', height: '16px', backgroundColor: borderColor }} />
-
-        {/* Language Toggle */}
-        <button
-          onClick={toggleLanguage}
-          className="flex items-center gap-2 px-3 py-1 rounded-full border transition-colors duration-200"
-          style={{ borderColor: 'var(--text-muted)' }}
-        >
-          <span className="text-sm" style={{ color: language === 'en' ? 'var(--accent)' : 'var(--text-muted)' }}>EN</span>
-          <span style={{ color: 'var(--text-muted)' }}>|</span>
-          <span className="text-sm" style={{ color: language === 'ch' ? 'var(--accent)' : 'var(--text-muted)' }}>CH</span>
-        </button>
-
-        {/* Theme Toggle */}
-        <button
-          onClick={toggleTheme}
-          className="flex items-center justify-center w-8 h-8 rounded-full border transition-all duration-200"
-          style={{ borderColor: 'var(--text-muted)', color: 'var(--text-muted)' }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'var(--accent)'
-            e.currentTarget.style.color = 'var(--accent)'
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = 'var(--text-muted)'
-            e.currentTarget.style.color = 'var(--text-muted)'
-          }}
-          aria-label="Toggle theme"
-        >
-          {isDark ? <Sun size={14} /> : <Moon size={14} />}
-        </button>
-      </div>
-
-      {/* Mobile pill navbar */}
-      <div
-        className="md:hidden flex items-center justify-between w-full max-w-sm px-5 py-2 rounded-full backdrop-blur-sm border"
-        style={{ backgroundColor: navBg, borderColor }}
-      >
-        <span className="text-sm font-medium" style={{ color: 'var(--accent)' }}>YB</span>
-
-        <div className="flex items-center gap-3">
-          {/* Theme toggle (mobile) */}
+    <header className="wrap">
+      <div className="nav">
+        <Link className="mark" to="/">Yanis<br />Berger</Link>
+        <nav className="nav-links" aria-label={t('nav.label')}>
+          {links.map((l) => renderLink(l))}
+          {toggles}
+        </nav>
+        <div className="menu-btn" style={{ gap: 8 }}>
+          {toggles}
           <button
-            onClick={toggleTheme}
-            className="transition-colors duration-200"
-            style={{ color: 'var(--text-muted)' }}
-            aria-label="Toggle theme"
+            type="button"
+            className="chip"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            onClick={() => setOpen((o) => !o)}
           >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
-
-          <button
-            className="transition-colors duration-200"
-            style={{ color: 'var(--text-secondary)' }}
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {open ? t('nav.close') : t('nav.menu')}
           </button>
         </div>
       </div>
-
-      {/* Mobile dropdown */}
-      {isOpen && (
-        <div
-          className="md:hidden absolute top-14 left-4 right-4 py-4 rounded-2xl border backdrop-blur-sm text-center"
-          style={{ backgroundColor: dropdownBg, borderColor }}
-        >
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="block py-2 transition-colors duration-200 text-sm"
-              style={{ color: 'var(--text-secondary)' }}
-              onClick={() => setIsOpen(false)}
-            >
-              {t(link.key)}
-            </a>
-          ))}
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block py-2 transition-colors duration-200 text-sm"
-            style={{ color: 'var(--text-secondary)' }}
-            onClick={() => setIsOpen(false)}
-          >
-            {t('nav.resume')}
-          </a>
-
-          <button
-            onClick={toggleLanguage}
-            className="mt-3 inline-flex items-center gap-2 px-3 py-1 rounded-full border transition-colors duration-200"
-            style={{ borderColor: 'var(--text-muted)' }}
-          >
-            <span className="text-sm" style={{ color: language === 'en' ? 'var(--accent)' : 'var(--text-muted)' }}>EN</span>
-            <span style={{ color: 'var(--text-muted)' }}>|</span>
-            <span className="text-sm" style={{ color: language === 'ch' ? 'var(--accent)' : 'var(--text-muted)' }}>CH</span>
-          </button>
-        </div>
-      )}
-    </nav>
+      <nav id="mobile-menu" className="mobile-menu" hidden={!open} aria-label={t('nav.label')}>
+        {links.map((l) => renderLink(l, () => setOpen(false)))}
+      </nav>
+    </header>
   )
 }
