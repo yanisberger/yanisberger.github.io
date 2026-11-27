@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import Projects from './components/Projects'
 import Writing from './components/Writing'
 import About from './components/About'
+import Courses from './components/Courses'
 import Philosophy from './components/Philosophy'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -20,6 +21,7 @@ export default function App() {
         <Projects />
         <Writing />
         <About />
+        <Courses />
         <Philosophy />
         <Contact />
       </main>
