@@ -46,7 +46,7 @@ export default function Navbar({ home = true }) {
           {links.map((l) => renderLink(l))}
           {toggles}
         </nav>
-        <div className="menu-btn" style={{ gap: 8 }}>
+        <div className="menu-btn" style={{ gap: 6 }}>
           {toggles}
           <button
             type="button"
