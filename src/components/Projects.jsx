@@ -24,7 +24,7 @@ export default function Projects() {
           {projects.map((p) => (
             <li key={p.key}>
               <div className="row">
-                <span className="meta">{t(`projects.${p.key}Kind`)}</span>
+                <span className="kind">{t(`projects.${p.key}Kind`)}</span>
                 <div>
                   <h3>
                     <a href={p.link} target="_blank" rel="noopener noreferrer"><span>{t(`projects.${p.key}Title`)}</span></a>

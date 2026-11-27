@@ -32,10 +32,10 @@ function GroupedList({ showAll }) {
         const quiet = topic !== 'crypto' && topic !== 'security'
         return (
           <div key={topic} className={`group${quiet ? ' quiet' : ''}`}>
-            <h3>
-              {t(`courses.topics.${topic}`)}
-              <small>{t(list.length === 1 ? 'courses.countOne' : 'courses.count').replace('{n}', list.length).replace('{ects}', fmt(ects))}</small>
-            </h3>
+            <div>
+              <h3>{t(`courses.topics.${topic}`)}</h3>
+              <p className="count">{t(list.length === 1 ? 'courses.countOne' : 'courses.count').replace('{n}', list.length).replace('{ects}', fmt(ects))}</p>
+            </div>
             <ul>
               {list.map((c) => (
                 <li key={`${c.name}-${c.semester}-${c.level}`}>
@@ -143,7 +143,7 @@ export default function Courses() {
         </div>
         <p className="sub">{t('courses.subtitle')}</p>
         {view === 'timeline' ? <Timeline /> : <GroupedList showAll={view === 'all'} />}
-        <p className="meta courses-sum">
+        <p className="courses-sum">
           {t('courses.summary').replace('{n}', courses.length).replace('{ects}', fmt(done))}
         </p>
       </div>

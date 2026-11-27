@@ -29,7 +29,7 @@ export default function BlogPost() {
           <article className="article">
             <Link className="tlink" to="/blog">{t('writing.allPosts')}</Link>
             <h1>{post.title}</h1>
-            <p className="meta">{post.date} · {post.readTime}</p>
+            <p className="meta">{post.date}, {post.readTime}</p>
             <p className="lede" style={{ marginTop: 20 }}>{post.description}</p>
             <div className="md">
               <ReactMarkdown components={mdComponents}>{post.content}</ReactMarkdown>

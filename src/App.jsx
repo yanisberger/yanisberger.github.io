@@ -4,7 +4,6 @@ import Projects from './components/Projects'
 import Writing from './components/Writing'
 import About from './components/About'
 import Courses from './components/Courses'
-import Philosophy from './components/Philosophy'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import { useLanguage } from './i18n/LanguageContext'
@@ -22,7 +21,6 @@ export default function App() {
         <Writing />
         <About />
         <Courses />
-        <Philosophy />
         <Contact />
       </main>
       <Footer />
