@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Now from './components/Now'
 import Projects from './components/Projects'
 import Writing from './components/Writing'
 import About from './components/About'
@@ -17,6 +18,7 @@ export default function App() {
       <Navbar />
       <main id="main">
         <Hero />
+        <Now />
         <Projects />
         <Writing />
         <About />

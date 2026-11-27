@@ -28,3 +28,6 @@ playwright/.cache/
 screenshots/
 .taste-skill/
 dist
+
+# Original photos (web versions are generated into public/photos by scripts/make-photos.py)
+photos/originals/

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ammertehore",
+    "file": "ammertehore-2665m-summer-2026(2).jpeg",
+    "place": "Ammertehore",
+    "altitude": 2665,
+    "season": "summer",
+    "year": 2026,
+    "alt": {
+      "en": "View from the Ammertehore over the valleys of the Bernese Oberland",
+      "ch": "Ussicht vom Ammertehore über d Täler vom Bärner Oberland"
+    }
+  },
+  {
+    "id": "lenk",
+    "file": "Lenk-1300-winter-2024.jpeg",
+    "place": "Lenk",
+    "altitude": 1300,
+    "season": "winter",
+    "year": 2024,
+    "alt": {
+      "en": "Snowy peaks in evening light above the forest near Lenk",
+      "ch": "Verschneiti Gipfle im Abesliecht überem Wald bi dr Lenk"
+    }
+  },
+  {
+    "id": "metschstand",
+    "file": "Metschstand-1450-summer-2025.jpeg",
+    "place": "Metschstand",
+    "altitude": 1450,
+    "season": "summer",
+    "year": 2025,
+    "alt": {
+      "en": "Sunset over the mountains and farm houses at Metschstand",
+      "ch": "Sunneundergang über de Bärge und de Burehüser bim Metschstand"
+    }
+  },
+  {
+    "id": "niederhorn",
+    "file": "niederhorn-1963-fall-2023.jpeg",
+    "place": "Niederhorn",
+    "altitude": 1963,
+    "season": "fall",
+    "year": 2023,
+    "alt": {
+      "en": "Valley and cliffs seen from the Niederhorn",
+      "ch": "Tal und Felswänd vom Niederhorn us gseh"
+    }
+  }
+]
